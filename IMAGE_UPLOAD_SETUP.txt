@@ -1,0 +1,18 @@
+EventSphere Company Logo Upload
+
+What changed:
+- Exhibitor Company Profile now has a Choose Image control instead of requiring an image URL.
+- JPG, PNG, and WebP images up to 5 MB are accepted by the frontend.
+- The existing POST /api/exhibitors/:id/upload endpoint stores the image in backend/uploads.
+- The saved /uploads/... path is converted to the backend URL when displayed in the exhibitor dashboard, public directory, and public profile.
+- Uploaded logo updates the shared exhibitor data immediately.
+
+How to use:
+1. Extract this project folder over/alongside your existing project, or copy the changed files into your existing project while keeping your existing .env files.
+2. Do NOT run the seed script; no database reset is needed.
+3. Start the backend from the backend folder with: npm run dev
+4. Start the frontend from the project root with: npm run dev
+5. Sign in as an exhibitor, open Company Profile, choose an image, and wait for the success message.
+6. Refresh the public Exhibitor Directory to see the logo.
+
+The upload API requires the exhibitor to be signed in as the owner (or an admin). Uploaded files are stored locally in backend/uploads, so keep that folder when backing up the project.
